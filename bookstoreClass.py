@@ -18,4 +18,16 @@ class Book:
         self.publication_year = publication_year
         self.author_id = author_id
 
-  
+    @classmethod
+    def createTable(cls, cursor, CONN):
+        query = """
+        CREATE TABLE IF NOT EXISTS books (
+                    id INTEGER PRIMARY KEY,
+                    title TEXT,
+                    publication_year INTEGER,
+                    author_id INTEGER,
+                    FOREIGN KEY (author_id) REFERENCES authors(id)
+        )
+        """    
+        cursor.execute(query)
+        CONN.commit()  
