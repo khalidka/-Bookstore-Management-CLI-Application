@@ -31,3 +31,12 @@ def view_books():
         for book in books:
             print(f"ID: {book[0]}, Title: {book[1]}, Year: {book[2]}, Author: {book[3]}")
     print("\033[92m*\033[0m" * 100)
+
+
+def update_book(book_id, title, publication_year, author_id):
+    # Update an existing book in the database
+    cursor.execute("UPDATE books SET title=?, publication_year=?, author_id=? WHERE id=?", (title, publication_year, author_id, book_id))
+    conn.commit()
+    print("\033[92m*\033[0m" * 100)
+    print(f"Book with ID {book_id} updated successfully.")
+    print("\033[92m*\033[0m" * 100)
