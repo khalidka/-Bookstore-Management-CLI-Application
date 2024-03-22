@@ -90,3 +90,35 @@ def delete_author(author_id):
 
 
 print("\033[92m*\033[0m" * 100)       
+
+
+
+
+def main():
+    while True:
+        print("\033[92m*\033[0m" * 100)
+        print("\033[94m-\033[0m" * 50)
+        print("\nOptions:")
+        print("\033[94m-\033[0m" * 50)
+        print("1. Manage Books")
+        print("2. Manage Authors")
+        print("3. Exit")
+        print("\033[94m-\033[0m" * 50)
+        print("\033[92m*\033[0m" * 100)
+        choice = input("Enter your choice: ")
+        if choice == "1":
+            manage_books()
+        elif choice == "2":
+            manage_authors()
+        elif choice == "3":
+            print("Exiting the program. Goodbye!")
+            print("\033[92m*\033[0m" * 100)
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+
+if __name__ == "__main__":
+    main()
+
+
