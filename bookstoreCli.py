@@ -77,4 +77,16 @@ def update_author(author_id, name):
     conn.commit()
     print("\033[92m*\033[0m" * 100)
     print(f"Author with ID {author_id} updated successfully.")
-    print("\033[92m*\033[0m" * 100)      
+    print("\033[92m*\033[0m" * 100)   
+
+def delete_author(author_id):
+    # Delete an author from the database
+    cursor.execute("DELETE FROM authors WHERE id=?", (author_id,))
+    conn.commit()
+    print("\033[92m*\033[0m" * 100)
+    print(f"Author with ID {author_id} deleted successfully.")
+    print("\033[92m*\033[0m" * 100)
+
+
+
+print("\033[92m*\033[0m" * 100)       
