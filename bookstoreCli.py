@@ -69,4 +69,12 @@ def view_authors():
         print("\033[94m-\033[0m" * 50)
         for author in authors:
             print(f"ID: {author[0]}, Name: {author[1]}")
-    print("\033[92m*\033[0m" * 100)    
+    print("\033[92m*\033[0m" * 100)  
+
+def update_author(author_id, name):
+    # Update an existing author in the database
+    cursor.execute("UPDATE authors SET name=? WHERE id=?", (name, author_id))
+    conn.commit()
+    print("\033[92m*\033[0m" * 100)
+    print(f"Author with ID {author_id} updated successfully.")
+    print("\033[92m*\033[0m" * 100)      
