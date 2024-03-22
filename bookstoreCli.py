@@ -40,3 +40,11 @@ def update_book(book_id, title, publication_year, author_id):
     print("\033[92m*\033[0m" * 100)
     print(f"Book with ID {book_id} updated successfully.")
     print("\033[92m*\033[0m" * 100)
+
+def delete_book(book_id):
+    # Delete a book from the database
+    cursor.execute("DELETE FROM books WHERE id=?", (book_id,))
+    conn.commit()
+    print("\033[92m*\033[0m" * 100)
+    print(f"Book with ID {book_id} deleted successfully.")
+    print("\033[92m*\033[0m" * 100)
