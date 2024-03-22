@@ -56,3 +56,17 @@ def add_author(name):
     print("\033[92m*\033[0m" * 100)
     print("Author added successfully.")
     print("\033[92m*\033[0m" * 100)    
+
+def view_authors():
+    # View all authors in the database
+    cursor.execute("SELECT * FROM authors")
+    authors = cursor.fetchall()
+    if not authors:
+        print("No authors found.")
+    else:
+        print("\033[92m*\033[0m" * 100)
+        print("Authors:")
+        print("\033[94m-\033[0m" * 50)
+        for author in authors:
+            print(f"ID: {author[0]}, Name: {author[1]}")
+    print("\033[92m*\033[0m" * 100)    
