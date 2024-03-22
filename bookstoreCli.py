@@ -18,3 +18,16 @@ def add_book(title, publication_year, author_id):
     print("\033[92m*\033[0m" * 100)
 
 
+def view_books():
+    # View all books with their respective authors
+    cursor.execute("SELECT b.id, b.title, b.publication_year, a.name FROM books b JOIN authors a ON b.author_id = a.id")
+    books = cursor.fetchall()
+    if not books:
+        print("No books found in the inventory.")
+    else:
+        print("\033[92m*\033[0m" * 100)
+        print("Books in the inventory:")
+        print("\033[94m-\033[0m" * 50)
+        for book in books:
+            print(f"ID: {book[0]}, Title: {book[1]}, Year: {book[2]}, Author: {book[3]}")
+    print("\033[92m*\033[0m" * 100)
