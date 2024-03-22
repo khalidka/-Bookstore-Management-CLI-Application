@@ -48,3 +48,11 @@ def delete_book(book_id):
     print("\033[92m*\033[0m" * 100)
     print(f"Book with ID {book_id} deleted successfully.")
     print("\033[92m*\033[0m" * 100)
+
+def add_author(name):
+    # Add a new author to the database
+    cursor.execute("INSERT INTO authors (name) VALUES (?)", (name,))
+    conn.commit()
+    print("\033[92m*\033[0m" * 100)
+    print("Author added successfully.")
+    print("\033[92m*\033[0m" * 100)    
