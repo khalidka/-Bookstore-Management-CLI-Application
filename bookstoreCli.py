@@ -91,7 +91,37 @@ def delete_author(author_id):
 
 print("\033[92m*\033[0m" * 100)       
 
-
+def manage_books():
+    while True:
+        print("\nBook Options:")
+        print("\033[94m-\033[0m" * 50)
+        print("1. Add a new book")
+        print("2. View all books")
+        print("3. Update a book")
+        print("4. Delete a book")
+        print("5. Back to main menu")
+        print("\033[94m-\033[0m" * 50)
+        choice = input("Enter your choice: ")
+        if choice == "1":
+            title = input("Enter the title of the book: ")
+            year = int(input("Enter the publication year of the book: "))
+            author_id = int(input("Enter the author ID of the book: "))
+            add_book(title, year, author_id)
+        elif choice == "2":
+            view_books()
+        elif choice == "3":
+            book_id = int(input("Enter the ID of the book to update: "))
+            title = input("Enter the new title of the book: ")
+            year = int(input("Enter the new publication year of the book: "))
+            author_id = int(input("Enter the new author ID of the book: "))
+            update_book(book_id, title, year, author_id)
+        elif choice == "4":
+            book_id = int(input("Enter the ID of the book to delete: "))
+            delete_book(book_id)
+        elif choice == "5":
+            break
+        else:
+            print("Invalid choice. Please try again.")
 
 
 def main():
