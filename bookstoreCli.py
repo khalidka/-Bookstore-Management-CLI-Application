@@ -89,7 +89,36 @@ def delete_author(author_id):
 
 
 
-print("\033[92m*\033[0m" * 100)       
+print("\033[92m*\033[0m" * 100)  
+
+def manage_authors():
+    while True:
+        print("\033[92m*\033[0m" * 100)
+        print("\nAuthor Options:")
+        print("\033[94m-\033[0m" * 50)
+        print("1. Add a new author")
+        print("2. View all authors")
+        print("3. Update an author")
+        print("4. Delete an author")
+        print("5. Back to main menu")
+        print("\033[94m-\033[0m" * 50)
+        choice = input("Enter your choice: ")
+        if choice == "1":
+            name = input("Enter the name of the author: ")
+            add_author(name)
+        elif choice == "2":
+            view_authors()
+        elif choice == "3":
+            author_id = int(input("Enter the ID of the author to update: "))
+            name = input("Enter the new name of the author: ")
+            update_author(author_id, name)
+        elif choice == "4":
+            author_id = int(input("Enter the ID of the author to delete: "))
+            delete_author(author_id)
+        elif choice == "5":
+            break
+        else:
+            print("Invalid choice. Please try again.")
 
 def manage_books():
     while True:
@@ -123,34 +152,7 @@ def manage_books():
         else:
             print("Invalid choice. Please try again.")
 
-def manage_authors():
-    while True:
-        print("\033[92m*\033[0m" * 100)
-        print("\nAuthor Options:")
-        print("\033[94m-\033[0m" * 50)
-        print("1. Add a new author")
-        print("2. View all authors")
-        print("3. Update an author")
-        print("4. Delete an author")
-        print("5. Back to main menu")
-        print("\033[94m-\033[0m" * 50)
-        choice = input("Enter your choice: ")
-        if choice == "1":
-            name = input("Enter the name of the author: ")
-            add_author(name)
-        elif choice == "2":
-            view_authors()
-        elif choice == "3":
-            author_id = int(input("Enter the ID of the author to update: "))
-            name = input("Enter the new name of the author: ")
-            update_author(author_id, name)
-        elif choice == "4":
-            author_id = int(input("Enter the ID of the author to delete: "))
-            delete_author(author_id)
-        elif choice == "5":
-            break
-        else:
-            print("Invalid choice. Please try again.")
+
 
 
 
@@ -160,16 +162,16 @@ def main():
         print("\033[94m-\033[0m" * 50)
         print("\nOptions:")
         print("\033[94m-\033[0m" * 50)
-        print("1. Manage Books")
-        print("2. Manage Authors")
+        print("1. Manage Authors")
+        print("2. Manage Books")
         print("3. Exit")
         print("\033[94m-\033[0m" * 50)
         print("\033[92m*\033[0m" * 100)
         choice = input("Enter your choice: ")
         if choice == "1":
-            manage_books()
-        elif choice == "2":
             manage_authors()
+        elif choice == "2":  
+            manage_books()
         elif choice == "3":
             print("Exiting the program. Goodbye!")
             print("\033[92m*\033[0m" * 100)

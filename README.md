@@ -35,18 +35,18 @@
 
 ## Usage
 > The CLI application provides the following options:
-# Manage Books
-1.Add a new book: Allows users to add a new book to the inventory by providing the title, publication year, and author ID.
-2.View all books: Displays a list of all books in the inventory, including their details and respective authors.
-3.Update a book: Enables users to update the details of an existing book, such as the title, publication year, and author ID.
-4.Delete a book: Allows users to delete a book from the inventory based on its ID.
 
 # Manage Authors
-1.Add a new author: Allows users to add a new author to the database by providing their name.
-2.View all authors: Displays a list of all authors in the database, including their IDs and names.
-3.Update an author: Enables users to update the name of an existing author based on their ID.
-4.Delete an author: Allows users to delete an author from the database based on their ID.
+- Add a new author: Allows users to add a new author to the database by providing their name.
+- View all authors: Displays a list of all authors in the database, including their IDs and names.
+- Update an author: Enables users to update the name of an existing author based on their ID.
+- Delete an author: Allows users to delete an author from the database based on their ID.
 
+# Manage Books
+- Add a new book: Allows users to add a new book to the inventory by providing the title, publication year, and author ID.
+- View all books: Displays a list of all books in the inventory, including their details and respective authors.
+- Update a book: Enables users to update the details of an existing book, such as the title, publication year, and author ID.
+- Delete a book: Allows users to delete a book from the inventory based on its ID.
 
 # Exit
 > Exits the application.
@@ -58,5 +58,5 @@
 > This project is licensed under the MIT License - see the LICENSE file for details.
 
 
-[x] author-name 
+[x] Author Name 
 > ** By: `KHALID SHEIKH ABDIRAHMAN MURSAL` **
